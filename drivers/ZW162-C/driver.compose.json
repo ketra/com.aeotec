@@ -25,6 +25,7 @@
     "productId": [
       162
     ],
+	"includeSecure": false,
     "zwaveAllianceProductId": 3292,
     "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=MarketCertificationFiles/3292/Doorbell%206%20product%20manual.pdf",
     "learnmode": {

@@ -1,73 +1,285 @@
 [
-  {
-    "id": "default_sound",
-    "type": "dropdown",
-    "label": {
-      "en": "Default sound",
-      "nl": "Standaard geluid"
-    },
-    "hint": {
-      "en": "This setting determines which sound should be played by default.",
-      "nl": "Deze instelling bepaalt welk geluid er standaard afgespeeld wordt."
-    },
-    "value": "1",
-    "values": [
-      {
-        "id": "1",
-        "label": {
-          "en": "Doorbell",
-          "nl": "Deurbel"
-        }
-      },
-      {
-        "id": "2",
-        "label": {
-          "en": "Alarm Siren",
-          "nl": "Alarm sirene"
-        }
-      },
-      {
-        "id": "3",
-        "label": {
-          "en": "Ding dong",
-          "nl": "Ding dong"
-        }
-      },
-      {
-        "id": "4",
-        "label": {
-          "en": "Bell Telephone",
-          "nl": "Klassieke telefoon"
-        }
-      },
-      {
-        "id": "5",
-        "label": {
-          "en": "Big Ben",
-          "nl": "Big Ben"
-        }
-      },
-      {
-        "id": "6",
-        "label": {
-          "en": "Smoke Alarm",
-          "nl": "Rook alarm"
-        }
-      },
-      {
-        "id": "7",
-        "label": {
-          "en": "Nuclear Alarm",
-          "nl": "Nuclear alarm"
-        }
-      },
-      {
-        "id": "8",
-        "label": {
-          "en": "Ring Alarm",
-          "nl": "Bel alarm"
-        }
-      }
-    ]
-  }
+	{
+		"type": "group",
+		"label": {
+			"en": "Default settings"
+		},
+		"children": [
+			{
+				"id": "Default_volume",
+				"type": "number",
+				"label": {
+					"en": "Default Volume"
+				},
+				"value": 100,
+				"min": 0,
+				"max": 100,
+				"units": {
+					"en": "percent"
+				}
+			},
+			{
+				"id": "default_sound",
+				"type": "dropdown",
+				"label": {
+					"en": "Default sound",
+					"nl": "Standaard geluid"
+				},
+				"hint": {
+					"en": "This setting determines which sound should be played by default.",
+					"nl": "Deze instelling bepaalt welk geluid er standaard afgespeeld wordt."
+				},
+				"value": "1",
+				"values": [
+					{
+						"id": "1",
+						"label": {
+							"en": "Doorbell",
+							"nl": "Deurbel"
+						}
+					},
+					{
+						"id": "2",
+						"label": {
+							"en": "Alarm Siren",
+							"nl": "Alarm sirene"
+						}
+					},
+					{
+						"id": "3",
+						"label": {
+							"en": "Ding dong",
+							"nl": "Ding dong"
+						}
+					},
+					{
+						"id": "4",
+						"label": {
+							"en": "Bell Telephone",
+							"nl": "Klassieke telefoon"
+						}
+					},
+					{
+						"id": "5",
+						"label": {
+							"en": "Big Ben",
+							"nl": "Big Ben"
+						}
+					},
+					{
+						"id": "6",
+						"label": {
+							"en": "Smoke Alarm",
+							"nl": "Rook alarm"
+						}
+					},
+					{
+						"id": "7",
+						"label": {
+							"en": "Nuclear Alarm",
+							"nl": "Nuclear alarm"
+						}
+					},
+					{
+						"id": "8",
+						"label": {
+							"en": "Ring Alarm",
+							"nl": "Bel alarm"
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"type": "group",
+		"label": {
+			"en": "Button 1 settings"
+		},
+		"children": [
+			{
+				"id": "ringer_volume",
+				"type": "number",
+				"label": {
+					"en": "Ringer Volume"
+				},
+				"value": 100,
+				"min": 0,
+				"max": 100,
+				"units": {
+					"en": "percent"
+				}
+			},
+			{
+				"id": "doorbell_sound",
+				"type": "dropdown",
+				"label": {
+					"en": "Ringer sound",
+					"nl": "Deurbel geluid"
+				},
+				"hint": {
+					"en": "This setting determines which sound should be played by default.",
+					"nl": "Deze instelling bepaalt welk geluid er standaard afgespeeld wordt."
+				},
+				"value": "1",
+				"values": [
+					{
+						"id": "1",
+						"label": {
+							"en": "Ding Dong",
+							"nl": "Ding Dong"
+						}
+					},
+					{
+						"id": "2",
+						"label": {
+							"en": "Ding Dong Tubular Bell",
+							"nl": "Ding Dong Buizen"
+						}
+					},
+					{
+						"id": "3",
+						"label": {
+							"en": "Traditional Apartment Buzzer",
+							"nl": "traditionele Appartement Buzzer"
+						}
+					},
+					{
+						"id": "4",
+						"label": {
+							"en": "Electric Apartment Buzzer",
+							"nl": "Elektrische Appartement Buzzer"
+						}
+					},
+					{
+						"id": "5",
+						"label": {
+							"en": "Westminster Chimes",
+							"nl": "Westminster Klokken"
+						}
+					},
+					{
+						"id": "6",
+						"label": {
+							"en": "Chimes (Hearing Enhanced)",
+							"nl": "klokkenspel"
+						}
+					},
+					{
+						"id": "7",
+						"label": {
+							"en": "Cuckoo (Hearing Enhanced)",
+							"nl": "Koekoek"
+						}
+					},
+					{
+						"id": "8",
+						"label": {
+							"en": "Traditional Bell",
+							"nl": "Traditionele bel"
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"type": "group",
+		"label": {
+			"en": "Tamper settings"
+		},
+		"children": [
+			{
+				"id": "tamper_volume",
+				"type": "number",
+				"label": {
+					"en": "Tamper Volume"
+				},
+				"value": 100,
+				"min": 0,
+				"max": 100,
+				"units": {
+					"en": "percent"
+				}
+			},
+			{
+				"id": "tamper_sound",
+				"type": "dropdown",
+				"label": {
+					"en": "Tamper sound",
+					"nl": "Tamper geluid"
+				},
+				"hint": {
+					"en": "This setting determines which sound should be played by default.",
+					"nl": "Deze instelling bepaalt welk geluid er standaard afgespeeld wordt."
+				},
+				"value": "1",
+				"values": [
+					{
+						"id": "17",
+						"label": {
+							"en": "Default",
+							"nl": "Standaard Tamper"
+						}
+					},
+					{
+						"id": "1",
+						"label": {
+							"en": "Ding Dong",
+							"nl": "Ding Dong"
+						}
+					},
+					{
+						"id": "2",
+						"label": {
+							"en": "Ding Dong Tubular Bell",
+							"nl": "Ding Dong Buizen"
+						}
+					},
+					{
+						"id": "3",
+						"label": {
+							"en": "Traditional Apartment Buzzer",
+							"nl": "traditionele Appartement Buzzer"
+						}
+					},
+					{
+						"id": "4",
+						"label": {
+							"en": "Electric Apartment Buzzer",
+							"nl": "Elektrische Appartement Buzzer"
+						}
+					},
+					{
+						"id": "5",
+						"label": {
+							"en": "Westminster Chimes",
+							"nl": "Westminster Klokken"
+						}
+					},
+					{
+						"id": "6",
+						"label": {
+							"en": "Chimes (Hearing Enhanced)",
+							"nl": "klokkenspel"
+						}
+					},
+					{
+						"id": "7",
+						"label": {
+							"en": "Cuckoo (Hearing Enhanced)",
+							"nl": "Koekoek"
+						}
+					},
+					{
+						"id": "8",
+						"label": {
+							"en": "Traditional Bell",
+							"nl": "Traditionele bel"
+						}
+					}
+				]
+			}
+		]
+	}
 ]

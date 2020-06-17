@@ -13,18 +13,7 @@ class AeotecDoorbellSixDevice extends ZwaveDevice {
 
     this.currentSiren = 1;
     this.defaultSiren = Number(this.getSetting('default_sound'));
-
-    this.registerCapabilityListener('onoff.siren', (args, opts) => {
-      if (this.sirenTimeout) clearTimeout(this.sirenTimeout);
-      this.sirenTimeout = setTimeout(() => {
-        this.setCapabilityValue('onoff.siren', false);
-      }, SIREN_TIMEOUT);
-
-      return this.setSiren({
-        sirenNumber: this.defaultSiren,
-        sirenState: !!args,
-      });
-    });
+	this.ringer_sound = Number(this.getSetting('doorbell_sound'));
 
     this.registerReportListener('NOTIFICATION', 'NOTIFICATION_REPORT', report => {
       if (report['Notification Type'] && report['Notification Status']) {
@@ -63,16 +52,68 @@ class AeotecDoorbellSixDevice extends ZwaveDevice {
       Value: false,
     });
   }
+  
+ async setVolume(node, Volume, sound) {
+	     return this.node.MultiChannelNodes[`${node}`].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_CONFIGURATION_SET']({
+		Volume: Volume,
+		'Default Tone Identifier': sound
+		});
+ }
 
   async onSettings(oldSettings, newSettings, changedKeys) {
     this.log(changedKeys);
-
+	this.log(oldSettings);
+	
+	// Default Sound Settings.
     if (changedKeys.includes('default_sound')) {
       if (Number(newSettings['default_sound']) < 9 && Number(newSettings['default_sound']) > 0) {
         this.log('Changing default sound');
         this.defaultSiren = newSettings['default_sound'];
+		if(changedKeys.includes('Default_volume'))
+			this.setVolume(1, newSettings['Default_volume'], Number(newSettings['doorbell_sound']));
+		else
+			this.setVolume(1, oldSettings['Default_volume'], Number(newSettings['doorbell_sound']));
       }
     }
+	if (changedKeys.includes('Default_volume')) {
+		this.log('Changing Volume')
+		this.setVolume(1, newSettings['Default_volume'], Number(this.getSetting('doorbell_sound')))
+	}
+	
+	// Tamper Settings
+	if (changedKeys.includes('tamper_sound')) {
+      if (Number(newSettings['tamper_sound']) < 18 && Number(newSettings['tamper_sound']) > 0) {
+        this.log('Changing default sound');
+        this.defaultSiren = newSettings['tamper_sound'];
+		if(changedKeys.includes('tamper_volume'))
+			this.setVolume(2, newSettings['tamper_volume'], Number(newSettings['tamper_sound']));
+		else
+			this.setVolume(2, oldSettings['tamper_volume'], Number(newSettings['tamper_sound']));
+      }
+    }
+	if (changedKeys.includes('tamper_volume')) {
+		this.log('Changing Volume')
+		this.setVolume(2, newSettings['tamper_volume'], Number(this.getSetting('doorbell_sound')))
+	}
+	
+	// Button 1 Settings
+	if (changedKeys.includes('doorbell_sound')) {
+      if (Number(newSettings['doorbell_sound']) < 9 && Number(newSettings['doorbell_sound']) > 0) {
+        this.log('Changing ringer sound');
+        this.ringer_sound = Number(newSettings['doorbell_sound']);
+		if(changedKeys.includes('ringer_volume'))
+			this.setVolume(3, newSettings['ringer_volume'], Number(newSettings['doorbell_sound']));
+		else
+			this.setVolume(3, oldSettings['ringer_volume'], Number(newSettings['doorbell_sound']));
+      }
+    }
+	if (changedKeys.includes('ringer_volume')) {
+		this.log('Changing Volume')
+		this.setVolume(3, newSettings['ringer_volume'], Number(this.getSetting('doorbell_sound')));
+	}
+
+
+	
 
     return Promise.resolve(newSettings);
   }
