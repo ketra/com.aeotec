@@ -1,14 +1,355 @@
 {
-  "triggers": [],
-  "conditions": [],
-  "actions": [
+	"triggers": [],
+	"conditions": [],
+	"actions": [
+		{
+			"id": "ZW162-turn_alarm_on",
+			"title": {
+				"en": "Trigger doorbell chime",
+				"nl": "Trigger deurbel geluid"
+			},
+			"args": [
+				{
+					"name": "sound",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "1",
+							"label": {
+								"en": "Ding Dong",
+								"nl": "Ding Dong"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "Ding Dong Tubular Bell",
+								"nl": "Ding Dong Buizen"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "Traditional Apartment Buzzer",
+								"nl": "traditionele Appartement Buzzer"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "Electric Apartment Buzzer",
+								"nl": "Elektrische Appartement Buzzer"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "Westminster Chimes",
+								"nl": "Westminster Klokken"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "Chimes (Hearing Enhanced)",
+								"nl": "klokkenspel"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "Cuckoo (Hearing Enhanced)",
+								"nl": "Koekoek"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "Traditional Bell",
+								"nl": "Traditionele bel"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "Smoke Alarm (LOW)",
+								"nl": "Rookmelder (Laag)"
+							}
+						},
+						{
+							"id": "10",
+							"label": {
+								"en": "Smoke Alarm (High)",
+								"nl": "Rookmelder (Hoog)"
+							}
+						},
+						{
+							"id": "11",
+							"label": {
+								"en": "Fire Evacuation Buzzer",
+								"nl": "Ontruimings Alarm"
+							}
+						},
+						{
+							"id": "12",
+							"label": {
+								"en": "Carbon Monoxide Sensor",
+								"nl": "CO2 Alarm"
+							}
+						},
+						{
+							"id": "13",
+							"label": {
+								"en": "Klaxon",
+								"nl": "Toeter"
+							}
+						},
+						{
+							"id": "14",
+							"label": {
+								"en": "Klaxon (Deep)",
+								"nl": "Toeter (Laag)"
+							}
+						},
+						{
+							"id": "15",
+							"label": {
+								"en": "Warning Tone",
+								"nl": "Waarschuwings Toon"
+							}
+						},
+						{
+							"id": "16",
+							"label": {
+								"en": "Tornado Siren",
+								"nl": "Tornado Sirene"
+							}
+						},
+						{
+							"id": "17",
+							"label": {
+								"en": "Alarm",
+								"nl": "Alarm"
+							}
+						},
+						{
+							"id": "18",
+							"label": {
+								"en": "Laag Alarm",
+								"nl": "Laag Alarm"
+							}
+						},
+						{
+							"id": "19",
+							"label": {
+								"en": "Alarm (Archangel tone)",
+								"nl": "Alarm (Archangel toon)"
+							}
+						},
+						{
+							"id": "20",
+							"label": {
+								"en": "Alarm (Shrill)",
+								"nl": "Alarm (Schel)"
+							}
+						},
+						{
+							"id": "21",
+							"label": {
+								"en": "Digital Siren",
+								"nl": "Digitale Sirene"
+							}
+						},
+						{
+							"id": "22",
+							"label": {
+								"en": "Alert Series",
+								"nl": "Serie Alarm"
+							}
+						},
+						{
+							"id": "23",
+							"label": {
+								"en": "Security",
+								"nl": "Security"
+							}
+						},
+						{
+							"id": "24",
+							"label": {
+								"en": "Clock Buzzer",
+								"nl": "Klok Buzzer"
+							}
+						},
+						{
+							"id": "25",
+							"label": {
+								"en": "Christmas Tree",
+								"nl": "Kerstboom"
+							}
+						},
+						{
+							"id": "26",
+							"label": {
+								"en": "Gong",
+								"nl": "Gong"
+							}
+						},
+						{
+							"id": "27",
+							"label": {
+								"en": "Single Bell Ting",
+								"nl": "Enkele Bel"
+							}
+						},
+						{
+							"id": "28",
+							"label": {
+								"en": "Tonal Pulse",
+								"nl": "Tonal Pulse"
+							}
+						},
+						{
+							"id": "29",
+							"label": {
+								"en": "Upwards Tone",
+								"nl": "Opwaardse Toon"
+							}
+						},
+						{
+							"id": "30",
+							"label": {
+								"en": "Door Open",
+								"nl": "Door Open"
+							}
+						}
+					]
+				},
+				{
+					"name": "Vomule",
+					"type": "number",
+					"value": 50,
+					"min": 0,
+					"max": 100
+				}
+			]
+		},
+		{
+			"id": "ZW162-turn_alarm_off",
+			"title": {
+				"en": "Turn doorbell chime off",
+				"nl": "Zet deurbel geluid uit"
+			},
+			"args": []
+		},
+		{
+			"id": "ZW162-change_volume",
+			"title": {
+				"en": "Set Volume of the doorbell",
+				"nl": "Zet deurbel volume"
+			},
+			"args": [
+				{
+					"name": "item",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "1",
+							"label": {
+								"en": "Default",
+								"nl": "Standaard"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "Tamper",
+								"nl": "temper"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "Button 1",
+								"nl": "Knop 1"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "Button 2",
+								"nl": "Knop 2"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "Button 3",
+								"nl": "Knop 3"
+							}
+						}
+					]
+				},
+				{
+					"type": "range",
+					"name": "volume",
+					"min": 0,
+					"max": 100,
+					"step": 5,
+					"label": "%",
+					"labelMultiplier": 1,
+					"labelDecimals": 0
+				}
+			]
+		},
     {
-      "id": "ZW162-turn_alarm_on",
-      "title": {
-        "en": "Trigger doorbell chime",
-        "nl": "Trigger deurbel geluid"
-      },
-      "args": [
+			"id": "ZW162-change_Sound",
+			"title": {
+				"en": "Set sound of the doorbell",
+				"nl": "Zet deurbel geluid"
+			},
+			"args": [
+				{
+					"name": "item",
+					"type": "dropdown",
+					"values": [
+						{
+							"id": "1",
+							"label": {
+								"en": "Default",
+								"nl": "Standaard"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "Tamper",
+								"nl": "temper"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "Button 1",
+								"nl": "Knop 1"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "Button 2",
+								"nl": "Knop 2"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "Button 3",
+								"nl": "Knop 3"
+							}
+						}
+					]
+				},
         {
           "name": "sound",
           "type": "dropdown",
@@ -16,70 +357,216 @@
             {
               "id": "1",
               "label": {
-                "en": "Doorbell",
-                "nl": "Deurbel"
+                "en": "Ding Dong",
+                "nl": "Ding Dong"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "Alarm Siren",
-                "nl": "Alarm sirene"
+                "en": "Ding Dong Tubular Bell",
+                "nl": "Ding Dong Buizen"
               }
             },
             {
               "id": "3",
               "label": {
-                "en": "Ding dong",
-                "nl": "Ding dong"
+                "en": "Traditional Apartment Buzzer",
+                "nl": "traditionele Appartement Buzzer"
               }
             },
             {
               "id": "4",
               "label": {
-                "en": "Bell Telephone",
-                "nl": "Klassieke telefoon"
+                "en": "Electric Apartment Buzzer",
+                "nl": "Elektrische Appartement Buzzer"
               }
             },
             {
               "id": "5",
               "label": {
-                "en": "Big Ben",
-                "nl": "Big Ben"
+                "en": "Westminster Chimes",
+                "nl": "Westminster Klokken"
               }
             },
             {
               "id": "6",
               "label": {
-                "en": "Smoke Alarm",
-                "nl": "Rook alarm"
+                "en": "Chimes (Hearing Enhanced)",
+                "nl": "klokkenspel"
               }
             },
             {
               "id": "7",
               "label": {
-                "en": "Nuclear Alarm",
-                "nl": "Nuclear alarm"
+                "en": "Cuckoo (Hearing Enhanced)",
+                "nl": "Koekoek"
               }
             },
             {
               "id": "8",
               "label": {
-                "en": "Ring Alarm",
-                "nl": "Bel alarm"
+                "en": "Traditional Bell",
+                "nl": "Traditionele bel"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "Smoke Alarm (LOW)",
+                "nl": "Rookmelder (Laag)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "Smoke Alarm (High)",
+                "nl": "Rookmelder (Hoog)"
+              }
+            },
+            {
+              "id": "11",
+              "label": {
+                "en": "Fire Evacuation Buzzer",
+                "nl": "Ontruimings Alarm"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Carbon Monoxide Sensor",
+                "nl": "CO2 Alarm"
+              }
+            },
+            {
+              "id": "13",
+              "label": {
+                "en": "Klaxon",
+                "nl": "Toeter"
+              }
+            },
+            {
+              "id": "14",
+              "label": {
+                "en": "Klaxon (Deep)",
+                "nl": "Toeter (Laag)"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Warning Tone",
+                "nl": "Waarschuwings Toon"
+              }
+            },
+            {
+              "id": "16",
+              "label": {
+                "en": "Tornado Siren",
+                "nl": "Tornado Sirene"
+              }
+            },
+            {
+              "id": "17",
+              "label": {
+                "en": "Alarm",
+                "nl": "Alarm"
+              }
+            },
+            {
+              "id": "18",
+              "label": {
+                "en": "Laag Alarm",
+                "nl": "Laag Alarm"
+              }
+            },
+            {
+              "id": "19",
+              "label": {
+                "en": "Alarm (Archangel tone)",
+                "nl": "Alarm (Archangel toon)"
+              }
+            },
+            {
+              "id": "20",
+              "label": {
+                "en": "Alarm (Shrill)",
+                "nl": "Alarm (Schel)"
+              }
+            },
+            {
+              "id": "21",
+              "label": {
+                "en": "Digital Siren",
+                "nl": "Digitale Sirene"
+              }
+            },
+            {
+              "id": "22",
+              "label": {
+                "en": "Alert Series",
+                "nl": "Serie Alarm"
+              }
+            },
+            {
+              "id": "23",
+              "label": {
+                "en": "Security",
+                "nl": "Security"
+              }
+            },
+            {
+              "id": "24",
+              "label": {
+                "en": "Clock Buzzer",
+                "nl": "Klok Buzzer"
+              }
+            },
+            {
+              "id": "25",
+              "label": {
+                "en": "Christmas Tree",
+                "nl": "Kerstboom"
+              }
+            },
+            {
+              "id": "26",
+              "label": {
+                "en": "Gong",
+                "nl": "Gong"
+              }
+            },
+            {
+              "id": "27",
+              "label": {
+                "en": "Single Bell Ting",
+                "nl": "Enkele Bel"
+              }
+            },
+            {
+              "id": "28",
+              "label": {
+                "en": "Tonal Pulse",
+                "nl": "Tonal Pulse"
+              }
+            },
+            {
+              "id": "29",
+              "label": {
+                "en": "Upwards Tone",
+                "nl": "Opwaardse Toon"
+              }
+            },
+            {
+              "id": "30",
+              "label": {
+                "en": "Door Open",
+                "nl": "Door Open"
               }
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "ZW162-turn_alarm_off",
-      "title": {
-        "en": "Turn doorbell chime off",
-        "nl": "Zet deurbel geluid uit"
-      },
-      "args": []
-    }
-  ]
+			]
+		}
+	]
 }
