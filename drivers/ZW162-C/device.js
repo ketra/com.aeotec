@@ -10,6 +10,7 @@ class AeotecDoorbellSixDevice extends ZwaveDevice {
   onMeshInit () {
     this.printNode()
     this.enableDebug()
+    this._driver = this.getDriver()
 
     this.currentSiren = 1
     this.defaultSiren = Number(this.getSetting('default_sound'))
@@ -19,6 +20,8 @@ class AeotecDoorbellSixDevice extends ZwaveDevice {
       if (report['Notification Type'] && report['Notification Status']) {
         if (report['Notification Type'] === 'Siren') {
           this.setCapabilityValue('onoff.siren', !!report['Notification Status (Raw)'])
+          if (report['Event'] > 0)
+            this._driver.DoorbellFlow.trigger(this, {}, {}).catch(this.error).then(this.log)
 
           if (this.sirenTimeout) clearTimeout(this.sirenTimeout)
           this.sirenTimeout = setTimeout(() => {
@@ -40,7 +43,22 @@ class AeotecDoorbellSixDevice extends ZwaveDevice {
 
   async setSiren (sound, Volume) {
     this.log('Turning siren', sound)
-    return this.node.MultiChannelNodes[1].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_TONE_PLAY_SET']({ 'Tone identifier': Number(sound) })
+    var result = await this.node.MultiChannelNodes[1].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_CONFIGURATION_GET']()
+    var CurVolume = Number(result['Volume'])
+    var CurSound = Number(result['Default Tone Identifer'])
+    console.log(CurVolume)
+    console.log(CurSound)
+    await this.node.MultiChannelNodes[1].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_CONFIGURATION_SET']({
+      Volume: Number(Volume),
+      'Default Tone Identifier': CurSound
+    })
+
+    await this.node.MultiChannelNodes[1].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_TONE_PLAY_SET']({ 'Tone identifier': Number(sound) })
+
+    return this.node.MultiChannelNodes[1].CommandClass['COMMAND_CLASS_SOUND_SWITCH']['SOUND_SWITCH_CONFIGURATION_SET']({
+      Volume: CurVolume,
+      'Default Tone Identifier': CurSound
+    })
   }
 
   async setSound (node, sound) {

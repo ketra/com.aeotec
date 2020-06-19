@@ -494,6 +494,19 @@
             "filter": "driver_id=ZW130"
           }
         ]
+      },
+      {
+        "id": "ZW162-bell_rang",
+        "title": {
+          "en": "Bell was rung"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZW162-C"
+          }
+        ]
       }
     ],
     "actions": [

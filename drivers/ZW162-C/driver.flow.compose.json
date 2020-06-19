@@ -1,5 +1,12 @@
 {
-	"triggers": [],
+	"triggers": [
+		{
+      "id": "ZW162-bell_rang",
+      "title": {
+        "en": "Bell was rung"
+      }
+    }
+		],
 	"conditions": [],
 	"actions": [
 		{
